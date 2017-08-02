@@ -1,0 +1,123 @@
+.sub-nav{
+    padding-left: 25%;
+    margin-top: 0;
+    color: #a9afbb;
+    font-weight: 400;
+}
+
+.title-info{
+  color: black !important;
+}
+
+.btn-navigation{  
+    /* border: 1px solid #d2d2d2; */
+    color: #5d5d5d;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.box-effect{
+  transition: box-shadow 0.5s ease-out;
+}
+
+.box-effect:hover{
+box-shadow: 0 1px 4px 0; 
+}
+
+
+
+.edit-btn{
+  cursor: pointer;
+  color: green;
+
+}
+
+.close-btn{
+  color: red;
+  cursor: pointer;
+}
+
+.no-margin{
+  margin: 0 !important;
+}
+
+.info-card-container{
+  margin-top: 10px
+}
+
+.header-info{
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.active-jewerly{
+  color:yellow !important;
+}
+
+.info-card{
+  color: #f77548;
+  font-size: 1.25em;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.main-color{
+   background: linear-gradient(60deg, #f97242, #ea8364); 
+}
+
+#loginCard{
+  margin-top: 15%;  
+}
+
+
+.parent{
+  position: relative;
+}
+
+.item-center {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inline{
+  display: inline-flex;
+  
+}
+
+.file-uploader-btn{
+    border: 1px solid #77a0c4;
+    color: white;
+    padding: 7px 13px;
+    background: #7aa9d0;
+    /* width: 95px;
+    height: 34px; */
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.fade-animation {
+  transition: 0.2s linear all;
+}
+
+.fade-animation.ng-hide {
+  opacity: 0;
+}
+
+.fade-animation.ng-enter {
+  opacity: 0;
+}
+
+.fade-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}

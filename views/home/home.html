@@ -1,0 +1,801 @@
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<!-- Master Css -->
+<link href="main.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link href="assets/plugin/switcher/css/switcher.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet" id="colors">
+
+
+
+
+
+<!--//==slider section Start==//-->
+
+
+<section class="slider-section">
+    <div id="main-slider" class="owl-carousel owl-theme">
+        <div class="item">
+            <figure class="dark-theme hidden-xs">
+                <img class="img-carousel" src="assets/img/woman-jewellery-1600x836.jpg" alt="">
+            </figure>
+            <figure class="dark-theme hidden-lg hidden-md hidden-sm">
+                <img class="img-carousel" src="assets/img/woman-jewellery-1600x836.jpg" alt="">
+            </figure>
+            <div class="slider-section-1 text-left">
+                <div class="container">
+                    <div class=" col-md-8 slider-box1">
+                        <div class="row">
+                            <div class="main-slider-heading">
+                                <h1 class="">High Fashion Design</h1>
+                            </div>
+                            <div class="slider-section-1-text">
+                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolor ipsa quis accusantium
+                                    reiciendis blanditiis, reprehenderit, eius eveniet unde similique molestias, recusandae
+                                    quia. Fugit suscipit maxime nulla facere! Ratione, deserunt? </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure class="dark-theme hidden-xs">
+                <img class="img-carousel" src="assets/img/lady-602881.jpg" alt="">
+            </figure>
+            <figure class="dark-theme hidden-lg hidden-md hidden-sm">
+                <img class="img-carousel" src="assets/img/lady-602881.jpg" alt="">
+            </figure>
+            <div class="slider-section-1 text-left">
+                <div class="container">
+                    <div class=" col-md-8 slider-box1">
+                        <div class="row">
+                            <div class="main-slider-heading">
+                                <h1 class="">High Fashion Design</h1>
+                            </div>
+                            <div class="slider-section-1-text">
+                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, aut, nesciunt? Incidunt
+                                    explicabo esse reiciendis quod ratione perspiciatis nam, asperiores illo provident tempora
+                                    vitae, alias laudantium ut! Voluptates, expedita, inventore. </p>
+                            </div>
+                            <!-- <a href="" class="itg-button mar-top20">Comprar</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//==slider section End==//-->
+
+<!--//===Categories-section Start==//-->
+<section>
+    <div class="Categories-box pad-top80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box">
+                    <h3 class="theme-headdings">Colecciones</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Categories-blog pad-top40">
+                    <div ng-repeat="category in categories" ng-class="{'responsive-top':$index>0}" class="col-md-3 col-sm-6 col-xs-12 pad-top30">
+                        <figure class="itg-hover-style1">
+                            <img firebase-src="{{$parent.options[1].folder + '/' + category.$id}}" class="img img-responsive img-box" alt="">
+                            <!-- <img ng-src="{{category.link}}" class="img img-responsive img-box" on-error-src="assets/img/products/Products1.png"> -->
+                            <figcaption class="pad-bottom10 figure-boxx cotegories">
+                                <h4 class="theme-headdings text-center">{{category.name}}</h4>
+                                <p>Mirar la colección</p>
+                                <div class="categorie-text-box">
+                                    <h4><a href="">{{category.name}}</a></h4>
+                                    <p class="p-text">{{category.description}}</p>
+                                    <a href="#/collection" class="itg-button mar-top20">Ver Colección</a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//===Categories-section End==//-->
+
+
+<!--//===Start check popap==//-->
+
+<div class="quick-vive-popap">
+    <!--//================Quick view Start ==============//-->
+    <div class="container">
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="Quick-view-popup modal-content text-left">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="selectedJewerly=null" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="col-md-12 col-xs-12 popap-open-box">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12 marB30">
+                                        <figure ng-if="selectedJewerly">
+                                            <img firebase-src="{{options[0].folder + '/' + selectedJewerly.$id, selectedJewerly}}" class="img img-responsive img-box-modal"
+                                            />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 responsive-top">
+                                <h3 class="theme-headdings text-left pad-top10 product-detail-title"><a href="">{{selectedJewerly.name}}</a></h3>
+                                <div class="star-box-section left product-det text-left pad-top15">
+                                    <ul>
+                                        <li>
+                                            <p>
+                                                <i class="fa fa-star star-repeat" ng-repeat="star in [] | range:selectedJewerly.qualification"></i>
+                                            </p>
+                                        </li>
+                                        <li class="border-left-site">{{selectedJewerly.price | currency }}</li>
+                                        <!-- <li class="border-left-site">Add a Review</li>  -->
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="per-box texy-left mar-top15">
+                                    <p class="p-text">{{selectedJewerly.description}}</p>
+                                </div>
+                                <!-- <div class="product-detail-btn  pad-top15">
+                                        <div class="form-row col-sm-5 col-xs-12 country-boxs billing-box select ">
+                                            <div class="row">
+                                                <p>
+                                                    <label for="billing_state">Material</label>
+                                                    <select class="billing_state2" id="billing_state" name="billing_state">
+                                                            <option value="">Select Color</option>
+                                                            <option value="AP">Red</option>
+                                                            <option value="AR">Blue</option>
+                                                            <option value="AS">Green</option>
+                                                            <option value="BR">Yellow</option>
+                                                            <option value="CT">Black</option>
+                                                        </select>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-sm-5 country-boxs billing-box select down ">
+                                            <div class="row ">
+                                                <p>
+                                                    <label for="billing_state">Size</label>
+                                                    <select class="billing_state" id="billing_state1" name="billing_state">
+                                                            <option value="">Select Size</option>
+                                                            <option value="AP">S</option>
+                                                            <option value="AR">L</option>
+                                                            <option value="AS">M</option>
+                                                            <option value="BR">XL</option>
+                                                            <option value="CT">XXL</option>
+                                                        </select>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                <div class="col-md-6 col-sm-7 row">
+                                    <div class="order-data box order-table text-center padTB15">
+                                        <div class="order-table-cell order-text product-input-type">
+                                            <input type="number" ng-model="quantityProduct" value="01" min="1" class="qty" name="qty1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-sm-7 product-box-btm-blog row">
+                                    <a href="" ng-click="addProductToCart(selectedJewerly, quantityProduct);" class="itg-button mar-top15">Agregar a carrito</a>
+                                </div>
+                                <div class="row">
+                                    <p class="col-xs-12 text-center info-added-text fade-animation" ng-if="isAdded">Producto agregado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//================Revisar End ==============//-->
+<!--//===Products-sectioon Start==//-->
+<section>
+    <div class="products-section pad-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box mar-bottom40 mar-top40">
+                    <h3 class="theme-headdings">¿Quienes Somos?</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    <p>Somos una marca nacida del amor y el gusto por las joyas únicas, con un deseo de dar a nuestros clientes
+                        el toque de exclusividad y elegancia que nuestros accesorios les proporcionan a quienes los usan.</p>
+                </div>
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Visión</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    <p>Ser reconocida en Colombia como una de las cinco mejores marcas de bisutería en el 2020.</p>
+                </div>
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Misión</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    <p>Diseñar piezas de joyería y bisutería únicas dirigidas a clientes que amen la exclusividad, calidad y
+                        elegancia.
+                    </p>
+                </div>
+
+                <div class="products mar-top40">
+                    <div class="col-md-3 col-sm-6 col-xs-12 pad-top30" ng-repeat="jewerly in jewerliesTop | limitTo:8">
+                        <figure class="itg-hover-style2">
+                            <img firebase-src="{{options[0].folder + '/' + jewerly.$id}}" class="img img-responsive img-box" on-error-src="assets/img/products/Products1.png">
+                            <div class="products-boxes">
+                                <a data-toggle="modal" data-target="#myModal" href="" ng-click="$parent.selectedJewerly=jewerly" class="itg-button">Revisar</a>
+                            </div>
+                            <figcaption class=" figure-boxx figure-section-hover">
+                                <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">{{jewerly.name}}</a></h4>
+                                <div class="star-box-section text-left">
+                                    <p><i class="star-code star-repeat fa fa-star" ng-repeat="star in [] | range:jewerly.qualification"></i>
+                                    </p>
+                                </div>
+                                <p>{{jewerly.price | currency}}</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//===Products-sectioon End==//-->
+<!--//===Featured-Product-sectoin Start==//-->
+<section>
+    <div class="Featured-Product-sectoin grey-bgs pad-top-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <figure>
+                                <!-- ng-init="getDownloadURL(options[0].folder + '/' + jewerlyFeatured.id, jewerlyFeatured)" ng-src="{{jewerlyFeatured.link}}" <img class="img-product" src="fotos_Gau/Copia de IMG_3115.jpg" alt=""> -->
+                                <img firebase-src="{{options[0].folder + '/' + jewerlyFeatured.id}}" class="img img-responsive img-product" on-error-src="assets/img/products/Products1.png">
+                            </figure>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 Featured-box Categorie-top responsive-top">
+                            <h3 class="theme-headdings">{{jewerlyFeatured.name}}</h3>
+                            <p class="Featured-text">{{jewerlyFeatured.description}}
+                            </p>
+                            <div class="head-medial-text pad-top5">
+                                <p> Disponibilidad:
+                                    <span ng-if="jewerlyFeatured.inStock" class="Products-in-stock">En Inventario</span>
+                                    <span ng-if="!jewerlyFeatured.inStock" class="Products-in-stock">No se encuentra en inventario</span>
+                                </p>
+                            </div>
+                            <div class="star-box-section text-left">
+                                <p>
+                                    <i class="fa fa-star star-repeat" ng-repeat="star in [] | range:jewerlyFeatured.qualification"></i>
+                                    <!-- <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="star-code fa fa-star-half-o" aria-hidden="true"></i> -->
+                                </p>
+                            </div>
+                            <div class="text-left Featured-price">
+                                <p>{{jewerlyFeatured.price | currency}}</p>
+                            </div>
+                            <!-- <a data-toggle="modal" data-target="#myModal" href="" ng-click="selectedJewerly=jewerlyFeatured" class="itg-button mar-top10">Revisar</a> -->
+                            <!-- <a href="product-detail.html" class="itg-button mar-top10">Revisar</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//===Featured-Product-sectoin End==//-->
+
+<!--//===product-items-section Start==//-->
+<!--  <section>
+    <div class="product-items-section pad-top-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Artículos Populares</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div id="product-items-slider" class="owl-carousel owl-theme">
+                    <div class="item" ng-repeat="jewerlyTop in jewerliesTop">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2" ng-init="getDownloadURL($parent.options[0].folder + '/' + jewerlyTop.$id, jewerlyTop)">
+                                <img ng-src="{{jewerlyTop.link}}" class="img img-responsive" on-error-src="assets/img/products/Products1.png" />
+                                <a data-toggle="modal" data-target="#myModal" href="" ng-click="$parent.selectedJewerly=jewerlyTop" class="itg-button">Revisar</a>
+                        </div>
+                        <figcaption class=" figure-boxx figure-section-hover">
+                            <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">{{jewerlyTop.name}}</a></h4>
+                            <div class="star-box-section text-left">
+                                <p><i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                </p>
+                            </div>
+                            <p>{{jewerlyTop.price | currency}}$</p>
+                        </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section> -->
+
+
+<!--//===product-items-section End==//-->
+
+<!--  <section>
+    <div class="product-items-section pad-top-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Artículos Populares</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div id="product-items-slider" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2">
+                                <img src="fotos_Gau/IMG_5176.jpg" class="img-product" alt="">
+                                <div class="products-boxes">
+                                    <a data-toggle="modal" data-target="#myModal" href="" class="itg-button">Revisar</a>
+                                </div>
+                                <figcaption class=" figure-boxx figure-section-hover">
+                                    <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">Jojería de Diseñador</a></h4>
+                                    <div class="star-box-section text-left">
+                                        <p><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                        </p>
+                                    </div>
+                                    <p>100.00$</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2">
+                                <img src="fotos_Gau/IMG_5177.jpg" class="img-product" alt="">
+                                <div class="products-boxes">
+                                    <a data-toggle="modal" data-target="#myModal" href="" class="itg-button">Revisar</a>
+                                </div>
+                                <figcaption class=" figure-boxx figure-section-hover">
+                                    <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">Jojería de Diseñador</a></h4>
+                                    <div class="star-box-section text-left">
+                                        <p><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                        </p>
+                                    </div>
+                                    <p>100.00$</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2">
+                                <img src="fotos_Gau/IMG_5178.jpg" class="img-product" alt="">
+                                <div class="products-boxes">
+                                    <a data-toggle="modal" data-target="#myModal" href="" class="itg-button">Revisar</a>
+                                </div>
+                                <figcaption class=" figure-boxx figure-section-hover">
+                                    <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">Jojería de Diseñador</a></h4>
+                                    <div class="star-box-section text-left">
+                                        <p><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                        </p>
+                                    </div>
+                                    <p>100.00$</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2">
+                                <img src="fotos_Gau/IMG_5150.png" class="img-product" alt="">
+                                <div class="products-boxes">
+                                    <a data-toggle="modal" data-target="#myModal" href="" class="itg-button">Revisar</a>
+                                </div>
+                                <figcaption class=" figure-boxx figure-section-hover">
+                                    <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">Jojería de Diseñador</a></h4>
+                                    <div class="star-box-section text-left">
+                                        <p><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                        </p>
+                                    </div>
+                                    <p>100.00$</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="itg-hover-style2">
+                                <img src="fotos_Gau/IMG_5175.jpg" class="img-product" alt="">
+                                <div class="products-boxes">
+                                    <a data-toggle="modal" data-target="#myModal" href="" class="itg-button">Revisar</a>
+                                </div>
+                                <figcaption class=" figure-boxx figure-section-hover">
+                                    <h4 class="theme-headdings text-center pad-top10"><a href="product-detail.html">Jojería de Diseñador</a></h4>
+                                    <div class="star-box-section text-left">
+                                        <p><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="star-code fa fa-star-half-o" aria-hidden="true"></i>
+                                        </p>
+                                    </div>
+                                    <p>100.00$</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  -->
+
+<!--//===banner-section Start==//-->
+<section>
+    <div class="banner-section">
+        <div class="special-style special-style-full special-style-semidark col-md-12 col-md-offset-0 pull-right">
+            <div class="bg-image" style="background-image:url('assets/img/slider/banner1.jpg');"></div>
+        </div>
+        <div class="container pad-top-bottom130">
+            <div class="banner-text-box">
+                <h1 class="text-center">Consejos útiles para mantener las joyas</h1>
+                <ul>
+                    <li>
+                        <p class="info-banner"> * Para las perlas, plata, acero y Golfilled</p>
+                    </li>
+                    <li>
+                        <p class="info-banner"> * No las olvide en lugares oscuros y húmedos, recuerde que son piedras orgánicas, el mal trato hace
+                            que pierda el brillo natural, le salga manchas que se convierten en hongos, retire la joya antes
+                            de lavarse las manos y/o aplicarse crema. Si va aplicarse perfume hágalo 10 minutos antes de
+                            colocarse la perla.</p>
+                    </li>
+                    <li>
+                        <p class="info-banner"> * Al lavarse las manos, aplicar perfume o ponerse crema es mejor quitarse las joyas. Las partículas
+                            de estos cosméticos (que no se eliminan con un aclarado rápido) pueden incrustarse en las partes
+                            huecas y formar una mezcla corrosiva que, a largo plazo, puede dar lugar a un desgaste prematuro
+                            del metal.</p>
+                    </li>
+                    <li>
+                        <p class="info-banner"> * Tenga cuidado al utilizar líquidos que suelen utilizarse para limpiar heridas, estos usualmente
+                            tienen mercurio y eso daña la plata, el acero y el Oro GoldFilled incluso las perlas y las piedra
+                            semipreciosas.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="info-banner"> * Para mantener la plata guárdela en un lugar fresco, seco que sea para evitar la oxidación.</p>
+                    </li>
+
+                </ul>
+
+                <!-- <a href="" class="itg-button mar-top20">Comprar</a> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!--//===banner-section End==//-->
+<!--//===blog-section Strat==//-->
+<!-- <section>
+    <div class="blog-section pad-top-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Our Blog</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet<br> consectetueradipiscing elit, sed diam nonummy nibh
+                        <p>
+                </div>
+                <div class="blog-box">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <figure class="blog-img-section">
+                            <img src="assets/img/all/blog1.jpg" alt="">
+                            <figcaption class="blog-text-section">
+                                <h4 class="theme-headdings pad-top20"><a href="blog-detail-sidebar.html">Lorem Ipsum Dolor</a></h4>
+                                <ul class="blog-tect-icons">
+                                    <li><a href=""><i class="fa fa-calendar" aria-hidden="true"></i>May 24, 2015</a></li>
+                                    <li><a href=""><i class="fa fa-comment" aria-hidden="true"></i>12 Comments</a></li>
+                                </ul>
+                                <p>Lorem Ipsum is simply dummy text of the rinting andey typesetting industry.
+                                </p>
+                                <a href="blog-detail-sidebar.html" class="btn-read">Read More <i class="fa fa-angle-double-right marL10" aria-hidden="true"></i></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 responsive-top">
+                        <figure class="blog-img-section">
+                            <img src="assets/img/all/blog2.jpg" alt="">
+                            <figcaption class="blog-text-section">
+                                <h4 class="theme-headdings pad-top20">
+                                    <a href="blog-detail-sidebar.html">Lorem Ipsum Dolor</a>
+                                </h4>
+                                <ul class="blog-tect-icons">
+                                    <li><a href=""><i class="fa fa-calendar" aria-hidden="true"></i>May 24, 2015</a></li>
+                                    <li><a href=""><i class="fa fa-comment" aria-hidden="true"></i>12 Comments</a></li>
+                                </ul>
+                                <p>Lorem Ipsum is simply dummy text of the rinting andey typesetting industry.
+                                </p>
+                                <a href="blog-detail-sidebar.html" class="btn-read">Read More <i class="fa fa-angle-double-right marL10" aria-hidden="true"></i></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 responsive-top">
+                        <figure class="blog-img-section">
+                            <img src="assets/img/all/blog3.jpg" alt="">
+                            <figcaption class="blog-text-section">
+                                <h4 class="theme-headdings pad-top20"><a href="blog-detail-sidebar.html">Lorem Ipsum Dolor</a></h4>
+                                <ul class="blog-tect-icons">
+                                    <li><a href=""><i class="fa fa-calendar" aria-hidden="true"></i>May 24, 2015</a></li>
+                                    <li><a href=""><i class="fa fa-comment" aria-hidden="true"></i>12 Comments</a></li>
+                                </ul>
+                                <p>Lorem Ipsum is simply dummy text of the rinting andey typesetting industry.
+                                </p>
+                                <a href="blog-detail-sidebar.html" class="btn-read">Read More <i class="fa fa-angle-double-right marL10" aria-hidden="true"></i></a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!--//===blog-section End==//-->
+<!--//===Partner-section Start==//-->
+<!-- <section>
+    <div class="Partner-section pad-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="headding-box mar-bottom40">
+                    <h3 class="theme-headdings">Our Partners</h3>
+                    <div class="headding-icons">
+                        <ul>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="style mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                            <li><span class="mar-top15"><i class="fa fa-diamond" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet<br> consectetueradipiscing elit, sed diam nonummy nibh
+                        <p>
+                </div>
+                <div id="Partner-slider" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="partner-figures">
+                                <img src="assets/img/all/Partner1.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="partner-figures">
+                                <img src="assets/img/all/Partner2.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="partner-figures">
+                                <img src="assets/img/all/Partner3.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="partner-figures">
+                                <img src="assets/img/all/Partner4.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <figure class="partner-figures">
+                                <img src="assets/img/all/Partner2.png" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!--//===Partner-section End==//-->
+<!--//===footer-main-section Start==//-->
+<footer>
+    <div class="footer-main-section">
+        <div class="special-style special-style-full special-style-semidark col-md-12 col-md-offset-0 pull-right">
+            <div class="bg-image" style="background-image:url('assets/img/all/footer-bg.jpg');"></div>
+        </div>
+        <div class="container">
+            <div class="row pad-top80 pad-bottom80">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-section1">
+                        <h4 class="footer-head-line">Acerca de Nosotros</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the
+                            industry.
+                        </p>
+                        <ul class="text-box">
+                            <li>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <span>hello@gmail.com</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>P: 3333 222 1111</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span> 99 Barnard St States - GA 22222 </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 responsive-top">
+                    <div class="footer-section2">
+                        <h4 class="footer-head-line">Información</h4>
+                        <ul class="footer-box2 pad-top15">
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Customer Service</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Site Map</a></li>
+                            <li><a href="">Advanced Search</a></li>
+                            <li><a href="">Orders and Returns</a></li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 responsive-top">
+                    <div class="footer-section2">
+                        <h4 class="footer-head-line">Mi cuenta</h4>
+                        <ul class="footer-box2 pad-top15">
+                            <li><a href="">Sign In</a></li>
+                            <li><a href="">View Cart</a></li>
+                            <li><a href="">My Wishlist</a></li>
+                            <li><a href="">Track My Order</a></li>
+                            <li><a href="">Private Policy</a></li>
+                            <li><a href="">Shipping & Returns</a></li>
+                            <li><a href="">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 responsive-top">
+                    <div class="footer-section1">
+                        <h4 class="footer-head-line">Newsletter</h4>
+                        <p>Sign up for our mailing list to get latest updates and offers.</p>
+                        <div class="search-box-1 mar-bottom15">
+                            <input type="text" class="search_terms" name="search" placeholder="Email address">
+                            <button class="button-style" type="submit" value=""><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
+                        <p>We respect your privacy</p>
+                        <div class="icons-section">
+                            <ul>
+                                <li class="footer-icon-left"><a href="" class="mini-cart-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="" class="mini-cart-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="" class="mini-cart-icon"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                <li><a href="" class="mini-cart-icon"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="" class="mini-cart-icon"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="footer-bottom-bar pad-top-bottom25">
+            <p>Copyright © 2017 Responsive Theme - <span class="footer-text">Jewellry</span> and All Rights Reserved. Designed
+                by <span class="footer-text"><a href="http://itgeeksin.com">ITGEEKS</a></span></p>
+        </div> -->
+    </div>
+</footer>
+<!-- <div id="style-switcher" style="left: 0px;">
+    <h2>Choose Color<a href=""><i class="fa fa-cog fa-spin"></i></a></h2>
+    <div>
+        <ul class="colors" id="color1">
+            <li>
+                <a href="" class="color"></a>
+            </li>
+            <li>
+                <a href="" class="color1 active"></a>
+            </li>
+            <li>
+                <a href="" class="color2"></a>
+            </li>
+            <li>
+                <a href="" class="color3"></a>
+            </li>
+            <li>
+                <a href="" class="color4"></a>
+            </li>
+            <li>
+                <a href="" class="color5"></a>
+            </li>
+            <li>
+                <a href="" class="color6"></a>
+            </li>
+            <li>
+                <a href="" class="color7"></a>
+            </li>
+        </ul>
+    </div>
+</div> -->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugin/owl-carousel-slider/js/owl.carousel.min.js"></script>
+<script src="assets/plugin/menu-menu/js/hover-dropdown-menu.js"></script>
+<script src="assets/plugin/fancyBox/js/jquery.fancybox.pack.js"></script>
+<script src="assets/plugin/fancyBox/js/jquery.fancybox-media.js"></script>
+<script src="assets/plugin/vertical-slider/js/jquery.bxslider.js"></script>
+<script src="assets/plugin/acordian/js/jquery-ui.js"></script>
+<script src="assets/plugin/menu-menu/js/jquery.hover-dropdown-menu-addon.js"></script>
+<script src="assets/plugin/switcher/js/switcher.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/main.js"></script>
